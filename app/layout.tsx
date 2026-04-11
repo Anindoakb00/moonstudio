@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const spaceGrotesk = Space_Grotesk({
+const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Moonstudios - Premium Video Production",
-  description: "Professional video editing and production delivered with exceptional quality, creativity, and speed. YouTube videos, short-form content, podcast editing, and more.",
+  title: "Moonstudios - Really cool videos, edited and delivered in 48 hours.",
+  description: "Moonstudios helps brands and creators scale with strategy, editing, posting, and optimization done for you.",
 };
 
 export default function RootLayout({
@@ -30,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} ${bricolageGrotesque.variable} antialiased`}>
         {children}
       </body>
     </html>
